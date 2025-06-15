@@ -1,7 +1,10 @@
-Options +FollowSymLinks
+# Activar el motor de reescritura
 RewriteEngine On
 
-# Elimina .html de la URL
+# 1. Hacer que /home cargue index.html
+RewriteRule ^home$ index.html [L]
+
+# 2. Eliminar .html de las URLs
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.html [L]
