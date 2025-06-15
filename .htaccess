@@ -1,4 +1,7 @@
+Options +FollowSymLinks
 RewriteEngine On
+
+# Elimina .html de la URL
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([a-zA-Z0-9_-]+)$ $1.html [L]
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.html [L]
