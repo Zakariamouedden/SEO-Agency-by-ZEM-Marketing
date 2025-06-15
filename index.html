@@ -344,20 +344,89 @@
   </svg>
 </a>
 
-<form class="max-w-md mx-auto space-y-4" action="https://formspree.io/f/mkgbbbdq" method="POST">
-  <input type="text" name="name" required />
-  <input type="email" name="email" required />
-  <input type="url" name="website" required />
-  <textarea name="message"></textarea>
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Claim Your Free Google Domination Plan</h2>
+    <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+      Let’s get you to #1. Fill out the form below.
+    </p>
 
-  <!-- campos ocultos -->
-  <input type="hidden" name="_subject" value="New Free Google Domination Plan Request" />
-  <input type="hidden" name="_next" value="https://seo.zem.marketing/thank-you-page.html" />
-  <input type="hidden" name="_to" value="infozemmarketing@gmail.com" />
+    <form
+      id="contact-form"
+      action="https://formspree.io/f/mkgbbbdq"
+      method="POST"
+      class="max-w-md mx-auto space-y-4"
+    >
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        class="w-full p-4 rounded-lg bg-gray-100 text-gray-900 focus:ring-2 focus:ring-blue-600"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        class="w-full p-4 rounded-lg bg-gray-100 text-gray-900 focus:ring-2 focus:ring-blue-600"
+      />
+      <input
+        type="url"
+        name="website"
+        placeholder="Your Website URL"
+        required
+        class="w-full p-4 rounded-lg bg-gray-100 text-gray-900 focus:ring-2 focus:ring-blue-600"
+      />
+      <textarea
+        name="message"
+        placeholder="Your Message (e.g., specific goals or questions)"
+        rows="4"
+        class="w-full p-4 rounded-lg bg-gray-100 text-gray-900 focus:ring-2 focus:ring-blue-600"
+      ></textarea>
 
-  <button type="submit">Get My Free Plan</button>
-</form>
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Free Google Domination Plan Request"
+      />
+      <input
+        type="hidden"
+        name="_next"
+        value="https://seo.zem.marketing/thank-you-page.html"
+      />
+      <input
+        type="hidden"
+        name="_to"
+        value="infozemmarketing@gmail.com"
+      />
 
+      <button
+        id="submit-button"
+        type="submit"
+        class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition"
+      >
+        Get My Free Plan
+      </button>
+    </form>
+
+    <p id="form-message" class="text-gray-600 mt-4 hidden"></p>
+  </div>
+</section>
+
+<!-- JS for button animation -->
+<script>
+  const form = document.getElementById('contact-form');
+  const button = document.getElementById('submit-button');
+  const message = document.getElementById('form-message');
+
+  form.addEventListener('submit', function () {
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    message.classList.add('hidden');
+  });
+</script>
 
   <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
